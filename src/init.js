@@ -9,6 +9,9 @@ $(document).ready(function(){
      * maker functions available in the global scope, clicking that node
      * will call the function to make the dancer.
      */
+    if (event.target.text === "line 'em up") {
+      
+    }
 
     /* dancerMakerFunctionName is a string which must match
      * one of the dancer maker functions available in global scope.
@@ -27,8 +30,13 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer);
     //debugger;
     $('body').append(dancer.$node);
   });
+  
+
+
+
 });
 

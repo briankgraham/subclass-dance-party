@@ -26,8 +26,18 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.blinkyDancer{
+.blinky{
   border:8px solid blue;
+  border-radius:10px;
+  position:absolute;
+}
+.anton{
+  border:18px solid green;
+  border-radius:10px;
+  position:absolute;
+}
+.another{
+  border:13px solid white;
   border-radius:10px;
   position:absolute;
 }
