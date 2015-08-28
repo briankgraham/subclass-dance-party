@@ -1,17 +1,42 @@
-var anotherDancer = function(top, left, timeBetweenSteps){
+var ChristianBale = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('another');
+  this.name = "christian";
+  this.$node.addClass(this.name);
+  this.$node.prepend("<img src ='src/bale.gif'/>");
+
+
+  this.$node.on("mousedown", function(){
+  
+    var $ball = $("<div class = 'ball'></div>").css(this.$node.position());;
+    $('body').append($ball);
+
+    for (var i = 0; i < dancers.length; i++){
+
+      if(dancers[i].name === "anton"){
+        $ball.animate(dancers[i].$node.position(), 600);
+      }
+    }
+
+
+    
+
+  }.bind(this));
 };
 
-anotherDancer.prototype = Object.create(makeDancer.prototype);
-anotherDancer.prototype.constructor = anotherDancer;
+ChristianBale.prototype = Object.create(makeDancer.prototype);
+ChristianBale.prototype.constructor = ChristianBale;
 
-anotherDancer.prototype.step = function(){
+
+
+ChristianBale.prototype.step = function(){
 
   makeDancer.prototype.step.call(this);
-  var randomGenerator = function () {
-    return Math.random() * 700;
-  };
-
-  this.$node.animate({top: randomGenerator()}, 'fast');
+  
 }
+
+
+
+ChristianBale.prototype.lineUp = function () {
+  makeDancer.prototype.lineUp.call(this);
+
+};
